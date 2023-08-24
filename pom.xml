@@ -13,6 +13,17 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+	<distributionManagement>
+            <snapshotRepository>
+             		<id>artifact-registry</id>
+             		<url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>
+  		</snapshotRepository>
+  		<repository>
+   			 <id>artifact-registry</id>
+    				<url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>
+  		</repository>
+	</distributionManagement>
+
 	<dependencies>
 		<!-- tag::joda[] -->
 		<dependency>
@@ -30,6 +41,20 @@
 		</dependency>
 		<!-- end::junit[] -->
 	</dependencies>
+
+
+	        <repositories>
+  			<repository>
+    				<id>artifact-registry</id>
+    				<url>artifactregistry://us-central1-maven.pkg.dev/PROJECT/quickstart-maven-repo</url>
+    				<releases>
+     					 <enabled>true</enabled>
+    				</releases>
+    				<snapshots>
+      					<enabled>true</enabled>
+    				</snapshots>
+  			</repository>
+		</repositories>
 
 	<build>
 		<plugins>
@@ -54,6 +79,15 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<extensions>
+                       <extension>
+                           <groupId>com.google.cloud.artifactregistry</groupId>
+                            <artifactId>artifactregistry-maven-wagon</artifactId>
+                            <version>2.0.1</version>
+                            </extension>
+                        </extensions>
+
+		
 	</build>
 
 </project>
