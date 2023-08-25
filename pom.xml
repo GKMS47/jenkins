@@ -3,30 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>artifact-registry</id>
-      <url>artifactregistry://us-central1-maven.pkg.dev/sodium-binder-396005/quickstart-maven-repo</url>
-    </snapshotRepository>
-    <repository>
-      <id>artifact-registry</id>
-      <url>artifactregistry://us-central1-maven.pkg.dev/sodium-binder-396005/quickstart-maven-repo</url>
-    </repository>
-  </distributionManagement>
-
-   <repositories>
-    <repository>
-      <id>artifact-registry</id>
-      <url>artifactregistry://us-central1-maven.pkg.dev/sodium-binder-396005/quickstart-maven-repo</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-
+ 
     <groupId>org.springframework</groupId>
     <artifactId>gs-maven</artifactId>
     <packaging>jar</packaging>
@@ -72,4 +49,31 @@
             </plugin>
         </plugins>
     </build>
+
+	   <repositories>
+                 <repository>
+                     <id>artifact-registry</id>
+                     <url>artifactregistry://us-central1-maven.pkg.dev/sodium-binder-396005/quickstart-maven-repo</url>
+                  <releases>
+                          <enabled>true</enabled>
+                  </releases>
+                  <snapshots>
+                        <enabled>true</enabled>
+                 </snapshots>
+               </repository>
+            </repositories>
+
+
+	 <distributionManagement>
+            <snapshotRepository>
+                <id>artifact-registry</id>
+                <url>artifactregistry://us-central1-maven.pkg.dev/sodium-binder-396005/quickstart-maven-repo</url>
+             </snapshotRepository>
+              <repository>
+                  <id>artifact-registry</id>
+                  <url>artifactregistry://us-central1-maven.pkg.dev/sodium-binder-396005/quickstart-maven-repo</url>
+               </repository>
+         </distributionManagement>
+
+	
 </project>
